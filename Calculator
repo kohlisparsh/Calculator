@@ -1,0 +1,33 @@
+#WAP To make a calculator
+def calculator():
+    i = 0
+
+    print("Thank you for using Sparsh's Calculator. Please answer all yes/no questions with 'yes' or 'no'")
+
+    while i < 20:
+        if i > 0:
+            if Keep == "yes":
+                print("Number has been kept.")    #Unnesscary Statement
+        if i == 0 or i > 0 and Keep == "no":
+            Num1 = int(input("Please enter the first number\n"))
+        Operator = input("'A' for addition. 'S' for subtraction. 'M' for multiplication\n").capitalize()
+        Num2 = int(input("Please enter the second number\n"))
+        if Operator == "A":
+            Num1 = Num1 + Num2
+            print(f"The answer is {Num1}")
+        elif Operator == "S":
+            Num1 = Num1 - Num2       #Num1 is used again so that when the while loop starts again it refrences the output as the first number.
+            print(f"The answer is {Num1}")
+        elif Operator == "M":
+            Num1 = Num1 * Num2
+            print(f"The answer is {Num1}")
+        Continue = input("Continue using calculator?\n").lower()
+        if Continue == "no":
+            i =+ 22
+        elif Continue == "yes":
+            Keep = input(f"Keep previous number to do calculations? ie {Num1}\n").lower()
+            if Keep == "no":
+                Num1 = Num1 - Num1
+        i += 1
+
+calculator()
